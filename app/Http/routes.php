@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('dash', ['as' => 'dash.index', 'middleware' => 'auth', 'uses' => function () {
     return view(' dashboard');
 }
+
 ]);
 
 Route::group(['prefix' => 'dash', 'namespace' => 'Dash', ' middleware' => 'auth'], function () {
