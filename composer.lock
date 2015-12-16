@@ -4,9 +4,50 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7a06979c2110d72af59997d30d929c63",
-    "content-hash": "46731a74b7ac6fc6544505c661be42c9",
+    "hash": "b1d7152122b6ccb4c05597eedfdb7578",
+    "content-hash": "9e9587204157ebaa9b7d1d653586f966",
     "packages": [
+        {
+            "name": "ckeditor/ckeditor",
+            "version": "4.5.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ckeditor/ckeditor-releases.git",
+                "reference": "6b2514e803e1cf1df5df3148198aacfb36a2864f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ckeditor/ckeditor-releases/zipball/6b2514e803e1cf1df5df3148198aacfb36a2864f",
+                "reference": "6b2514e803e1cf1df5df3148198aacfb36a2864f",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+",
+                "LGPL-2.1+",
+                "MPL-1.1+"
+            ],
+            "authors": [
+                {
+                    "name": "CKSource",
+                    "homepage": "http://cksource.com"
+                }
+            ],
+            "description": "JavaScript WYSIWYG web text editor.",
+            "homepage": "http://ckeditor.com",
+            "keywords": [
+                "CKEditor",
+                "editor",
+                "fckeditor",
+                "html",
+                "javascript",
+                "richtext",
+                "text",
+                "wysiwyg"
+            ],
+            "time": "2015-12-09 15:59:05"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",

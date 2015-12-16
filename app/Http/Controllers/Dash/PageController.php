@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Dash;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PageRequest;
 use App\Page;
-use Illuminate\Http\Request;
 
 class PageController extends Controller {
     public function index() {
@@ -18,24 +18,28 @@ class PageController extends Controller {
         return view('page.create');
     }
 
-    public function store(Request $request) {
-        dd($request);
+    public function store(PageRequest $request) {
+        Page::create($request->except(['_token']));
+        return redirect('dash/page')->with('message', 'Page was create success.');
     }
 
-    public function show($id) {
-        return Page::find($id);
+    public function show(Page $page) {
+        $data['page'] = $page;
+        return view('page.detail', $data);
     }
 
-    public function edit($id) {
-        $data['page'] = Page::find($id);
+    public function edit(Page $page) {
+        $data['page'] = $page;
         return view('page.update', $data);
     }
 
-    public function update(Request $request, $id) {
-        dd($request);
+    public function update(PageRequest $request, Page $page) {
+        $page->update($request->except(['_token']));
+        return redirect('dash/page')->with('message', 'Page was update success.');
     }
 
-    public function destroy($id) {
-        //
+    public function destroy(Page $page) {
+        $page->delete();
+        return redirect('dash/page')->with('message', 'Page was delete success.');
     }
 }

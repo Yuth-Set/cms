@@ -15,6 +15,11 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+    <style type="text/css">
+        * {
+            border-radius: 1px !important;
+        }
+    </style>
 </head>
 
 <body class="skin-black">
@@ -296,7 +301,7 @@
     {!! Html::script('js/bootstrap.min.js') !!}
     {!! Html::script('js/bootstrap-table.min.js') !!}
     {!! Html::script('js/app.js') !!}
-    {!! Html::script('js/angular.min.js') !!}
+    {{-- {!! Html::script('js/angular.min.js') !!} --}}
     {{-- {!! Html::script('js/dash-routes.js') !!} --}}
     {{-- {!! Html::script('js/dash-controllers.js') !!} --}}
     @stack('scripts')

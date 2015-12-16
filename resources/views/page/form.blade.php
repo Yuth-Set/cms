@@ -3,12 +3,15 @@
         <div class="form-group">
             <label for="title">Title</label>
             {!! Form::text('title', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('title', '<span class="text-danger">:message</span>') !!}
+
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label for="slug">Slug</label>
             {!! Form::text('slug', null, ['class' => 'form-control']) !!}
+            {!! $errors->first('slug', '<span class="text-danger">:message</span>') !!}
         </div>
     </div>
 </div>
@@ -16,7 +19,7 @@
     <div class="col-md-12">
         <div class="form-group">
             <label for="description">Description</label>
-            {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
+            {!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'txtDescription']) !!}
         </div>
     </div>
 </div>
@@ -30,7 +33,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="author">Author</label>
-            {!! Form::text('author', null, ['class' => 'form-control', 'readonly' => 'true']) !!}
+            {!! Form::text('author', 1, ['class' => 'form-control', 'readonly' => 'true']) !!}
         </div>
     </div>
 </div>
@@ -60,12 +63,3 @@
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-3 pull-right">
-        <a href="#/page/" class="btn btn-block btn-default">Cancel</a>
-    </div>
-    <div class="col-md-3 pull-right">
-        <input class="btn btn-block btn-info" type="button" name="save" ng-click="save()" value="Save">
-    </div>
-</div>
-<br/>

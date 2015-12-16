@@ -50,10 +50,22 @@ php artisan make:model User
 php artisan make:model Page
 php artisan make:model Tag
 php artisan make:model Post
-php artisan make:model Comments
+php artisan make:model Comment
 php artisan make:model Menu
 php artisan make:model PostTag
 php artisan make:model Setting
+
+
+php artisan make:request UserRequest
+php artisan make:request PageRequest
+php artisan make:request TagRequest
+php artisan make:request PostRequest
+php artisan make:request CommentRequest
+php artisan make:request MenuRequest
+php artisan make:request PostTagRequest
+php artisan make:request SettingRequest
+
+
 
 
 First Configure
