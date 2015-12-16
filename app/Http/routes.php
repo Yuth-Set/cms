@@ -11,12 +11,13 @@
 |
  */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace' => 'Home'], function () {
+    Route::get('/', 'PageController@index');
+    Route::get('page/{name}', 'PageController@show');
 });
 
 Route::get('dash', ['as' => 'dash.index', 'middleware' => 'auth', 'uses' => function () {
-    return view(' dashboard');
+    return view('dashboard');
 }
 
 ]);
@@ -25,7 +26,7 @@ Route::group(['prefix' => 'dash', 'namespace' => 'Dash', ' middleware' => 'auth'
     Route::resource('post', 'PostController');
     Route::resource('page', 'PageController');
     Route::resource('user', 'UserController');
-    Route::resource('comment', 'CommmentController');
+    Route::resource('comment', 'CommentController');
 });
 
 Route::group(['namespace' => 'Auth', 'prefix' => 'auth'], function () {

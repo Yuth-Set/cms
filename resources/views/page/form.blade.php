@@ -33,7 +33,9 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="author">Author</label>
-            {!! Form::text('author', 1, ['class' => 'form-control', 'readonly' => 'true']) !!}
+            <p class="form-control">{!! Auth::user()->username !!}</p>
+            {!! Form::hidden
+
         </div>
     </div>
 </div>
