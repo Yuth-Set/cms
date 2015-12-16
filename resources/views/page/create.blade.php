@@ -27,12 +27,3 @@
 </div>
 
 @endsection
-
-@push('scripts')
-{!! Html::script('ckeditor/ckeditor.js') !!}
-<script type="text/javascript">
-    $(function(){
-        $('#txtDescription').ckeditor();
-    });
-</script>
-@endpush

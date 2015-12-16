@@ -9,7 +9,6 @@
                 Detail Page Information
             </div>
             <div class="panel-body">
-
                 {!! Form::model($page, ['class' => 'form col-md-12']) !!}
                     @include('page.form')
                     <div class="row">
@@ -27,7 +26,6 @@
                     </div>
                     <br/>
                 {!! Form::close() !!}
-
             </div>
         </div>
     </div>

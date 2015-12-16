@@ -8,9 +8,9 @@ use App\Page;
 
 class PageController extends Controller {
     public function index() {
-        // if (\Request::ajax()) {
-        return Page::all();
-        // }
+        if (\Request::ajax()) {
+            return Page::all();
+        }
         return view('page.index');
     }
 
