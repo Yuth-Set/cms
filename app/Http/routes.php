@@ -15,15 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('dash', function () {
-    return view('dashboard');
-});
+Route::get('dash', ['as' => 'dash.index', 'middleware' => 'auth', 'uses' => function () {
+    return view(' dashboard');
+}
+]);
 
-Route::group(['prefix' => 'dash', 'namespace' => 'Dash'], function () {
+Route::group(['prefix' => 'dash', 'namespace' => 'Dash', ' middleware' => 'auth'], function () {
     Route::resource('post', 'PostController');
-
     Route::resource('page', 'PageController');
     Route::resource('user', 'UserController');
+    Route::resource('comment', 'CommmentController');
 });
 
 Route::group(['namespace' => 'Auth', 'prefix' => 'auth'], function () {
