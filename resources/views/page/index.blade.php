@@ -12,17 +12,15 @@
                     <div class="panel-body">
                         <h1>List ALl Pages</h1>
 
-                            <!-- data-height="343" -->
                         <div id="toolbar">
-                        <a class="btn btn-default" href="{!! route('dash.page.create') !!}">New Page</a>
-
+                            <a class="btn btn-default" href="{!! route('dash.page.create') !!}">New Page</a>
                             <button id="remove" class="btn btn-danger" disabled>
                                 <i class="glyphicon glyphicon-remove"></i> Delete
                             </button>
                         </div>
                         <table id="table" data-toggle="table"
                             data-toolbar="#toolbar"
-                            data-url="http://localhost:8000/dash/page"
+                            data-url="{!! route('dash.page.index') !!}"
                             data-show-columns="true"
                             data-show-toggle="true"
                             data-show-export="true"

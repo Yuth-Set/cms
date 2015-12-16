@@ -10,19 +10,19 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-body">
-                        <h1>All posts
-                            <a class="btn btn-default pull-right" href="{!! route('dash.page.create') !!}">New Post</a>
-                        </h1>
+                        <h1>Posts...</h1>
 
                             <!-- data-height="343" -->
                         <div id="toolbar">
+                        <a class="btn btn-default" href="{!! route('dash.post.create') !!}">New post</a>
+
                             <button id="remove" class="btn btn-danger" disabled>
                                 <i class="glyphicon glyphicon-remove"></i> Delete
                             </button>
                         </div>
                         <table id="table" data-toggle="table"
                             data-toolbar="#toolbar"
-                            data-url="http://localhost:8000/dash/page"
+                            data-url="{!! route('dash.post.index') !!}"
                             data-show-columns="true"
                             data-show-toggle="true"
                             data-show-export="true"
@@ -46,6 +46,7 @@
                             <thead>
                                 <tr>
                                     <th data-field="state" data-checkbox="true"></th>
+                                    <th data-field="id" data-align="center">Id</th>
                                     <th data-field="title">Title</th>
                                     <th data-field="slug">Slug</th>
                                     <th data-field="content">Content</th>
@@ -113,10 +114,10 @@
     window.operaterEvents = {
         'click .update': function (e, value, row, index) {
             console.log('update row:', row);
-            window.location.href = 'page/' + row.id + '/edit';
+            window.location.href = 'post/' + row.id + '/edit';
         },
         'click .delete': function (e, value, row, index) {
-            var link = 'http://localhost:8000/dash/page/' + row.id,
+            var link = 'http://localhost:8000/dash/post/' + row.id,
                 form = {
                     '_token': $('meta[name=csrf-token]').attr('content'),
                     '_method': 'DELETE'
