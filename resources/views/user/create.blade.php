@@ -6,14 +6,14 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Create Page
+                Create User
             </div>
             <div class="panel-body">
-                {!! Form::open(['route' => 'dash.page.store', 'class' => 'form col-md-12']) !!}
-                    @include('page.form')
+                {!! Form::open(['route' => 'dash.user.store', 'class' => 'form col-md-12']) !!}
+                    @include('user.form')
                     <div class="row">
                         <div class="col-md-3 pull-right">
-                            {!! link_to_route('dash.page.index', 'Cancel', '', ['class' => 'btn btn-block btn-default']) !!}
+                            {!! link_to_route('dash.user.index', 'Cancel', '', ['class' => 'btn btn-block btn-default']) !!}
                         </div>
                         <div class="col-md-3 pull-right">
                             {!! Form::submit('Save', ['class' => 'btn btn-block btn-info']) !!}
@@ -28,11 +28,3 @@
 
 @endsection
 
-@push('scripts')
-{!! Html::script('ckeditor/ckeditor.js') !!}
-<script type="text/javascript">
-    $(function(){
-        $('#txtDescription').ckeditor();
-    });
-</script>
-@endpush
