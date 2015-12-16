@@ -24,4 +24,19 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 </div>
+
+@endsection
+
+@push('scripts')
+{!! Html::script('ckeditor/ckeditor.js') !!}
+<script type="text/javascript">
+    $(function(){
+        $('#txtDescription').ckeditor();
+    });
+</script>
+@endpush
+=======
+</div>
+>>>>>>> 622b159e9c8bc5474d2e93be56a0475e20319c4a

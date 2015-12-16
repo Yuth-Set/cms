@@ -15,6 +15,7 @@
                             <!-- data-height="343" -->
                         <div id="toolbar">
                         <a class="btn btn-default" href="{!! route('dash.page.create') !!}">New Page</a>
+
                             <button id="remove" class="btn btn-danger" disabled>
                                 <i class="glyphicon glyphicon-remove"></i> Delete
                             </button>
