@@ -9,6 +9,8 @@ class CreatePagesTable extends Migration {
             $table->increments('id', 11);
             $table->string('title');
             $table->string('slug');
+            $table->integer('order')->unsigned();
+            $table->boolean('status');
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->string('author');

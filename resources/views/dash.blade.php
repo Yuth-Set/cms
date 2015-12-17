@@ -306,6 +306,7 @@
     {!! Html::script('js/bootstrap.min.js') !!}
     {!! Html::script('js/bootstrap-table.min.js') !!}
     {!! Html::script('js/app.js') !!}
+    {!! Html::script('js/dash.js') !!}
     {{-- {!! Html::script('js/angular.min.js') !!} --}}
     {{-- {!! Html::script('js/dash-routes.js') !!} --}}
     {{-- {!! Html::script('js/dash-controllers.js') !!} --}}

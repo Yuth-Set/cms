@@ -13,4 +13,12 @@ class Page extends Model {
         'author',
         'layout'
     ];
+
+    public static function listOn() {
+        return Page::where('status', 1)->orderBy('order', 'asc')->lists('title', 'slug');
+    }
+
+    public static function listOff() {
+        return Page::where('status', 0)->orderBy('order', 'asc')->lists('title', 'slug');
+    }
 }
