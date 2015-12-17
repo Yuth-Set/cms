@@ -24,6 +24,7 @@ Route::get('dash', ['as' => 'dash.index', 'middleware' => 'auth', 'uses' => func
 
 Route::group(['prefix' => 'dash', 'namespace' => 'Dash', ' middleware' => 'auth'], function () {
     Route::resource('post', 'PostController');
+    Route::delete('page/{page?}', 'PageController@destroy');
     Route::resource('page', 'PageController');
     Route::resource('user', 'UserController');
     Route::resource('comment', 'CommentController');

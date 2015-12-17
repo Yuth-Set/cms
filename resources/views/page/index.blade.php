@@ -91,21 +91,11 @@
     // });
 
     $remove.click(function () {
-        var ids = getIdSelections();
-        ajaxDelete(ids);
-        // var link = 'http://localhost:8000/dash/page/' + ids,
-        //     form = {
-        //         '_token': $('meta[name=csrf-token]').attr('content'),
-        //         '_method': 'DELETE'
-        //     };
-
-        // $.post(link, form, function(res){
-        //     $table.bootstrapTable('remove', {
-        //         field: 'id',
-        //         values: ids
-        //     })
-        // });
-        $remove.prop('disabled', true);
+        if (confirm('Are you want to delete these pages ?')) {
+            var ids = getIdSelections();
+            ajaxDelete(ids);
+            $remove.prop('disabled', true);
+        }
     });
 
 
@@ -126,18 +116,9 @@
             window.location.href = 'page/' + row.id + '/edit';
         },
         'click .delete': function (e, value, row, index) {
-            var link = 'http://localhost:8000/dash/page/' + row.id,
-                form = {
-                    '_token': $('meta[name=csrf-token]').attr('content'),
-                    '_method': 'DELETE'
-                };
-
-            $.post(link, form, function(res){
-                $table.bootstrapTable('remove', {
-                    field: 'id',
-                    values: [row.id]
-                });
-            });
+            if (confirm('Are you sure want to delete this page ?')) {
+                ajaxDelete(row.id);
+            }
         }
     };
 
@@ -159,8 +140,8 @@
         return html.join('');
     }
 
-    function ajaxDelete(id) {
-        var link = '{{url('dash/page')}}/' + (id[0] != 'undefined' ? id[0] : id);
+    function ajaxDelete(id, callback) {
+        var link = '{{url('dash/page')}}';
         var form = {
             '_token': $('meta[name=csrf-token]').attr('content'),
             '_method': 'DELETE',
