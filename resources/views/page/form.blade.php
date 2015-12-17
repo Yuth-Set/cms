@@ -34,8 +34,7 @@
         <div class="form-group">
             <label for="author">Author</label>
             <p class="form-control">{!! Auth::user()->username !!}</p>
-            {!! Form::hidden
-
+            {!! Form::hidden('author', Auth::user()->id) !!}
         </div>
     </div>
 </div>
