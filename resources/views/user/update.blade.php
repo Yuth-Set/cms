@@ -6,10 +6,10 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Create Page
+                Update User
             </div>
             <div class="panel-body">
-                {!! Form::model($page, ['route' => ['dash.user.update', $page->id], 'method' => 'PATCH', 'class' => 'form col-md-12']) !!}
+                {!! Form::model($user, ['route' => ['dash.user.update', $user->id], 'method' => 'PATCH', 'class' => 'form col-md-12']) !!}
                     @include('user.form')
                     <div class="row">
                         <div class="col-md-3 pull-right">
@@ -26,4 +26,4 @@
     </div>
 </div>
 
-@endsectionuser
+@endsection

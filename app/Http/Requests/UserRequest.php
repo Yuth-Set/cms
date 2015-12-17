@@ -21,10 +21,6 @@ class UserRequest extends Request {
      */
     public function rules() {
         switch ($this->method()) {
-            case 'GET':
-            case 'DELETE':
-                return [];
-
             case 'POST':
                 return [
                     //
@@ -45,8 +41,6 @@ class UserRequest extends Request {
                     'email'     => 'required',
                     'phone'     => 'required|regex:/[0-9]{9,13}/'
                 ];
-            default:
-                break;
         }
     }
 }

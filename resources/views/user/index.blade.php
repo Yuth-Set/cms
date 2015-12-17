@@ -71,7 +71,6 @@
 
 @endsection
 
-
 @push('scripts')
 <script type="text/javascript">
     var $table = $('#table'),
@@ -81,7 +80,7 @@
     $table.on('check.bs.table uncheck.bs.table check-all.bs.table uncheck-all.bs.table',
     function () {
         $remove.prop('disabled', !$table.bootstrapTable('getSelections').length);
-        // save your data, here just save the current user
+        // save your data, here just save the current page
         selections = getIdSelections();
         console.log(selections);
         // push or splice the selections if you want to save all data selections
@@ -93,10 +92,19 @@
 
     $remove.click(function () {
         var ids = getIdSelections();
-        $table.bootstrapTable('remove', {
-            field: 'id',
-            values: ids
-        });
+        ajaxDelete(ids);
+        // var link = 'http://localhost:8000/dash/page/' + ids,
+        //     form = {
+        //         '_token': $('meta[name=csrf-token]').attr('content'),
+        //         '_method': 'DELETE'
+        //     };
+
+        // $.post(link, form, function(res){
+        //     $table.bootstrapTable('remove', {
+        //         field: 'id',
+        //         values: ids
+        //     })
+        // });
         $remove.prop('disabled', true);
     });
 
@@ -149,6 +157,20 @@
         });
         html.push('</row>');
         return html.join('');
+    }
+
+    function ajaxDelete(id) {
+        var link = '{{url('dash/user')}}/' + (id[0] != 'undefined' ? id[0] : id);
+        var form = {
+            '_token': $('meta[name=csrf-token]').attr('content'),
+            '_method': 'DELETE',
+            'id': id
+        };
+        $.post(link, form, function(res){
+            $table.bootstrapTable('remove', {
+                field: 'id', values: id
+            })
+        });
     }
 </script>
 @endpush

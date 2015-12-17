@@ -31,14 +31,29 @@ class UserController extends Controller {
 
     public function edit(User $user) {
         $data['user'] = $user;
+        $data['types'] = User::lists('type', 'type');
+        switch (User::where('id', $user)->pluck('type')) {
+            case 'admin':
+                $data['type'] = 'admin';
+                break;
+            case 'user':
+                $data['type'] = 'user';
+                break;
+        }
         return view('user.update', $data);
     }
 
-    public function update(Request $request, $id) {
-        //
+    public function update(Request $request, Page $page) {
+        $user->update($request->except(['_token']));
+        return redirect('dash/page')->with('message', 'Page was update success.');
     }
 
-    public function destroy($id) {
-        //
+    public function destroy(User $user) {
+        if(\Request::has('id')) {
+            User::destroy(\Request::input('id');
+            return ['result' => true];
+        }
+        $user->delete();
+        return redirect('dash/page')->with('message', 'Page was deleted success.');
     }
 }
