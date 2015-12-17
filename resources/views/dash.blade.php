@@ -271,12 +271,12 @@
                     </li>
                     <li>
                         <a href="{!! url('dash/user') !!}">
-                            <i class="fa fa-glass"></i> <span>User</span>
+                            <i class="fa fa-user"></i> <span>User</span>
                         </a>
                     </li>
                     <li>
                         <a href="{!! url('dash/comment') !!}">
-                            <i class="fa fa-globe"></i> <span>Comment</span>
+                            <i class="fa fa-comments"></i> <span>Comment</span>
                         </a>
                     </li>
                 </ul>
