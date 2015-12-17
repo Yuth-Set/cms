@@ -6,12 +6,12 @@ use Illuminate\Database\Seeder;
 class PostTableSeeder extends Seeder {
     public function run() {
         $posts = [
-            ['Test post', 'test_post', 'This is the first testing posts', 1, '1', '1'],
-            ['Test post', 'test_post', 'This is the first testing posts', 0, '2', '3'],
-            ['Test post', 'test_post', 'This is the first testing posts', 1, '3', '2'],
-            ['Test post', 'test_post', 'This is the first testing posts', 0, '1', '1'],
-            ['Test post', 'test_post', 'This is the first testing posts', 1, '2', '3'],
-            ['Test post', 'test_post', 'This is the first testing posts', 1, '3', '2']
+            ['Test post', 'test_post_1', 'This is the first testing posts', 1, '1', '1'],
+            ['Test post', 'test_post_2', 'This is the first testing posts', 0, '2', '3'],
+            ['Test post', 'test_post_3', 'This is the first testing posts', 1, '3', '2'],
+            ['Test post', 'test_post_4', 'This is the first testing posts', 0, '1', '1'],
+            ['Test post', 'test_post_5', 'This is the first testing posts', 1, '2', '3'],
+            ['Test post', 'test_post_6', 'This is the first testing posts', 1, '3', '2']
 
         ];
 
