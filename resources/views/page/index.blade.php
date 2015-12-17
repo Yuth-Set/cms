@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-body">
-                        <h1>List ALl Pages</h1>
+                        <h1>List All Pages</h1>
 
                         <div id="toolbar">
                             <a class="btn btn-default" href="{!! route('dash.page.create') !!}">New Page</a>
@@ -92,10 +92,19 @@
 
     $remove.click(function () {
         var ids = getIdSelections();
-        $table.bootstrapTable('remove', {
-            field: 'id',
-            values: ids
-        });
+        ajaxDelete(ids);
+        // var link = 'http://localhost:8000/dash/page/' + ids,
+        //     form = {
+        //         '_token': $('meta[name=csrf-token]').attr('content'),
+        //         '_method': 'DELETE'
+        //     };
+
+        // $.post(link, form, function(res){
+        //     $table.bootstrapTable('remove', {
+        //         field: 'id',
+        //         values: ids
+        //     })
+        // });
         $remove.prop('disabled', true);
     });
 
@@ -148,6 +157,20 @@
         });
         html.push('</row>');
         return html.join('');
+    }
+
+    function ajaxDelete(id) {
+        var link = '{{url('dash/page')}}/' + (id[0] != 'undefined' ? id[0] : id);
+        var form = {
+            '_token': $('meta[name=csrf-token]').attr('content'),
+            '_method': 'DELETE',
+            'id': id
+        };
+        $.post(link, form, function(res){
+            $table.bootstrapTable('remove', {
+                field: 'id', values: id
+            })
+        });
     }
 </script>
 @endpush

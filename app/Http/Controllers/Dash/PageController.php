@@ -42,6 +42,10 @@ class PageController extends Controller {
     }
 
     public function destroy(Page $page) {
+        if (\Request::has('id')) {
+            Page::destroy(\Request::input('id'));
+            return ['result' => true];
+        }
         $page->delete();
         return redirect('dash/page')->with('message', 'Page was delete success.');
     }

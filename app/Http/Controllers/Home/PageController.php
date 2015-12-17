@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller {
     public function __construct() {
-        $this->data['menus'] = Page::lists('title', 'slug');
+        $this->data['menus'] = Page::listOn();
         $this->data['slide'] = FALSE;
     }
 
