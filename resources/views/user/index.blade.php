@@ -21,10 +21,22 @@
                             </button>
                         </div>
                         <table id="table" data-toggle="table"
-                            data-url="http://localhost:8000/dash/user"
+                            data-toolbar="#toolbar"
+                            data-url="{!! route('dash.user.index') !!}"
                             data-show-columns="true"
+                            data-show-toggle="true"
+                            data-show-export="true"
+                            data-show-export="true"
+                            data-show-pagination-switch="true"
+
+                            data-search="true"
+                            data-show-refresh="true"
                             data-id-field="id"
                             data-pagination="true"
+
+                            data-detail-view="true"
+                            data-detail-formatter="detailFormatter"
+
                             data-page-size="5"
                             data-page-list="[5,10,15,50,100]"
                             data-pagination-first-text="<i class='glyphicon glyphicon-fast-backward'></i>"
@@ -33,7 +45,7 @@
                             data-pagination-last-text="<i class='glyphicon glyphicon-fast-forward'>">
                             <thead>
                                 <tr>
-                                    <th data-field="id" data-radio="true"></th>
+                                    <th data-field="state" data-checkbox="true"></th>
                                     <th data-field="username">Username</th>
                                     <th data-field="firstname">First name</th>
                                     <th data-field="lastname">Last name</th>
@@ -69,7 +81,7 @@
     $table.on('check.bs.table uncheck.bs.table check-all.bs.table uncheck-all.bs.table',
     function () {
         $remove.prop('disabled', !$table.bootstrapTable('getSelections').length);
-        // save your data, here just save the current page
+        // save your data, here just save the current user
         selections = getIdSelections();
         console.log(selections);
         // push or splice the selections if you want to save all data selections
@@ -103,10 +115,10 @@
     window.operaterEvents = {
         'click .update': function (e, value, row, index) {
             console.log('update row:', row);
-            window.location.href = 'page/' + row.id + '/edit';
+            window.location.href = 'user/' + row.id + '/edit';
         },
         'click .delete': function (e, value, row, index) {
-            var link = 'http://localhost:8000/dash/page/' + row.id,
+            var link = 'http://localhost:8000/dash/user/' + row.id,
                 form = {
                     '_token': $('meta[name=csrf-token]').attr('content'),
                     '_method': 'DELETE'

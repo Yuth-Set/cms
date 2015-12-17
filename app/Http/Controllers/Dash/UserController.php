@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dash;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class UserController extends Controller {
         return view('user.create', $data);
     }
 
-    public function store(Request $request) {
+    public function store(UserRequest $request) {
         User::create($request->except(['_token']));
         return redirect('dash/user')->with('message', 'User was create success.');
     }
