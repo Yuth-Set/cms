@@ -14,7 +14,7 @@
     {!! Html::style('assets/css/responsive.css', ['media' => 'screen']) !!}
     {!! Html::style('assets/css/style.css', ['media' => 'screen']) !!}
 
-    @if ($slide)
+    @if (isset($slide) && $slide)
         {!! Html::style('assets/css/camera.css', ['media' => 'screen']) !!}
     @endif
 
@@ -24,7 +24,7 @@
     {!! Html::script('assets/js/jquery.easing.1.3.js') !!}
     {!! Html::script('assets/js/jquery.ui.totop.js') !!}
 
-    @if ($slide)
+    @if (isset($slide) && $slide)
         {!! Html::script('assets/js/camera.js') !!}
         <script>
         $(document).ready(function() {
@@ -48,6 +48,7 @@
 
 <body>
 <!--==============================header=================================-->
+<?php $menus = App\Page::listOn();?>
 <header>
     <div class="container">
         <div class="row">
@@ -117,7 +118,7 @@
             </div>
        </div>
     </div>
-    @if ($slide)
+    @if (isset($slide) && $slide)
     <div class="slider">
         <div class="camera_wrap">
             <div data-src="{{url('assets/img/slide1.jpg')}}"></div>

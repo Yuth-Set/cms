@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Dash;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
@@ -22,7 +22,7 @@ class UserController extends Controller {
 
     public function store(UserRequest $request) {
         User::create($request->except(['_token']));
-        return redirect('dash/user')->with('message', 'User was create success.');
+        return redirect('dash/user')->with('message', 'User was created success.');
     }
 
     public function show($id) {
@@ -43,17 +43,13 @@ class UserController extends Controller {
         return view('user.update', $data);
     }
 
-    public function update(Request $request, Page $page) {
+    public function update(Request $request, User $user) {
         $user->update($request->except(['_token']));
-        return redirect('dash/page')->with('message', 'Page was update success.');
+        return redirect('dash/user')->with('message', 'User was update success.');
     }
 
     public function destroy(User $user) {
-        if(\Request::has('id')) {
-            User::destroy(\Request::input('id');
-            return ['result' => true];
-        }
         $user->delete();
-        return redirect('dash/page')->with('message', 'Page was deleted success.');
+        return redirect('dash/user')->with('message', 'User was deleted success.');
     }
 }

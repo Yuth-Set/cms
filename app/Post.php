@@ -12,4 +12,12 @@ class Post extends Model {
         'status'
 
     ];
+
+    public static function postOn($slug) {
+        return Post::where(['slug' => $slug, 'status' => 1])->first();
+    }
+
+    public static function postOff($slug) {
+        return Post::where(['slug' => $slug, 'status' => 0])->first();
+    }
 }
