@@ -13,7 +13,7 @@
                     @include('page.form')
                     <div class="row">
                         <div class="col-md-3 pull-right">
-                            {!! link_to_route('dash.page.index', 'Cancel', '', ['class' => 'btn btn-block btn-default']) !!}
+                            {!! link_to_route('dash.page.index', 'Cancel', [], ['class' => 'btn btn-block btn-default']) !!}
                         </div>
                         <div class="col-md-3 pull-right">
                             {!! Form::submit('Save', ['class' => 'btn btn-block btn-info']) !!}
