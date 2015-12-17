@@ -6,8 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\PageRequest;
 use App\Page;
 
+// use Illuminate\Support\Str;
+
 class PageController extends Controller {
     public function index() {
+        // echo Str::slug('test stasd', '_');
         if (\Request::ajax()) {
             return Page::all();
         }
