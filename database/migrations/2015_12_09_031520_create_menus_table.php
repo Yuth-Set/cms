@@ -17,6 +17,8 @@ class CreateMenusTable extends Migration {
     }
 
     public function down() {
+        DB::statement('SET foreign_key_checks = 0');
         Schema::drop('menus');
+        DB::statement('SET foreign_key_checks = 1');
     }
 }

@@ -23,10 +23,18 @@ elixir(function(mix) {
     mix.styles('style.css', 'public/css/style.css', css);
 
     mix.scripts('jquery.min.js', 'public/js/jquery.min.js', js);
-    mix.scripts('angular/angular.min.js', 'public/js/angular.min.js', bower);
+
+    mix.scripts([
+        'angular/angular.min.js',
+        'angular-route/angular-route.min.js'
+    ], 'public/js/angular.min.js', bower);
+
     mix.scripts('bootstrap.min.js', 'public/js/bootstrap.min.js', js);
 
-    mix.scripts('bootstrap-table/dist/bootstrap-table.min.js', 'public/js/bootstrap-table.min.js', bower);
+    mix.scripts([
+        'bootstrap-table/dist/bootstrap-table.min.js',
+        //'bootstrap-table/dist/extensions/angular/bootstrap-table-angular.min.js'
+    ], 'public/js/bootstrap-table.min.js', bower);
 
     mix.scripts('Director/app.js', 'public/js/app.js', js);
 

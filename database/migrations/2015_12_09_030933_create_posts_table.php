@@ -12,18 +12,19 @@ class CreatePostsTable extends Migration {
             $table->text('content');
             $table->boolean('status');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
             $table->integer('page_id')->unsigned();
-            $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
-
             $table->timestamps();
             $table->timestamp('deleted_at');
             $table->timestamp('published_at');
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
         });
     }
 
     public function down() {
+        DB::statement('SET foreign_key_checks = 0');
         Schema::drop('posts');
+        DB::statement('SET foreign_key_checks = 1');
     }
 }
