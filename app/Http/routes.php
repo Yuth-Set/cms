@@ -12,6 +12,7 @@ Route::group(['prefix' => 'dash', 'namespace' => 'Dashboard', 'middleware' => 'a
     }]);
 
     Route::resource('post', 'PostController');
+    Route::delete('post/{post?}', 'PostController@destroy');
     Route::delete('page/{page?}', 'PageController@destroy');
     Route::resource('page', 'PageController');
     Route::resource('user', 'UserController');

@@ -16,11 +16,13 @@ class PostController extends Controller {
     }
 
     public function create() {
+        $data['pages'] = Page::where('status', 1)->lists();
         return view('post.create');
     }
 
     public function store(PostRequest $request) {
-        Post::create($request->except(['_token']));
+        dd($request->all());
+        Post::create($request->all());
         return redirect('dash/post')->with('message', 'Post was create success.');
     }
 
@@ -40,6 +42,10 @@ class PostController extends Controller {
     }
 
     public function destroy(Post $post) {
+        if (\Request::has('id')) {
+            Post::destroy(\Request::input('id'));
+            return ['result' => true];
+        }
         $post->delete();
         return redirect('dash/post')->with('message', 'Post was delete success.');
     }
