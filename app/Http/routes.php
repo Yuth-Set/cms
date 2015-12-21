@@ -2,8 +2,8 @@
 
 Route::group(['namespace' => 'Homepage'], function () {
     Route::get('/', 'PageController@index');
-    Route::get('page/{name}', 'PageController@show');
-    Route::get('post/{name}', 'PostController@show');
+    Route::get('page/{slug}', 'PageController@show');
+    Route::get('post/{slug}', 'PostController@show');
 });
 
 Route::group(['prefix' => 'dash', 'namespace' => 'Dashboard', 'middleware' => 'auth'], function () {
@@ -12,6 +12,7 @@ Route::group(['prefix' => 'dash', 'namespace' => 'Dashboard', 'middleware' => 'a
     }]);
 
     Route::resource('post', 'PostController');
+    Route::delete('post/{post?}', 'PostController@destroy');
     Route::delete('page/{page?}', 'PageController@destroy');
     Route::resource('page', 'PageController');
     Route::resource('user', 'UserController');
