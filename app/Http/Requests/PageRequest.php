@@ -12,7 +12,7 @@ class PageRequest extends Request {
     public function rules() {
         return [
             'title' => 'required',
-            'slug'  => 'required'
+            'slug'  => 'required|unique:pages,slug'
         ];
     }
 }
