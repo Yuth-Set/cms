@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
+use App\Page;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -16,12 +17,11 @@ class PostController extends Controller {
     }
 
     public function create() {
-        $data['pages'] = Page::where('status', 1)->lists();
-        return view('post.create');
+        $data['pages'] = Page::where('status', 1)->lists('title', 'id');
+        return view('post.create', $data);
     }
 
     public function store(PostRequest $request) {
-        dd($request->all());
         Post::create($request->all());
         return redirect('dash/post')->with('message', 'Post was create success.');
     }

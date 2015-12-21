@@ -32,8 +32,10 @@
                     <label>
                         {!! Form::radio('status', '1',true) !!}Publish!
                     </label>
+                </div>
+                <div class="radio">
                     <label>
-                        {!! Form::radio('status', '0') !!}Not-Publish!
+                        {!! Form::radio('status', '0') !!}Draft!
                     </label>
                 </div>
         </div>

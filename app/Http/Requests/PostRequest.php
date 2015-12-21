@@ -12,7 +12,7 @@ class PostRequest extends Request {
     public function rules() {
         return [
             'title'   => 'required',
-            'slug'    => 'required',
+            'slug'    => 'required|unique:posts,slug',
             'content' => 'required'
         ];
     }
