@@ -20,4 +20,8 @@ class Post extends Model {
     public static function postOff($slug) {
         return Post::where(['slug' => $slug, 'status' => 0])->first();
     }
+
+    public function page() {
+        return $this->belongsTo('App\Page');
+    }
 }

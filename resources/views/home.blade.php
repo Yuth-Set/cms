@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="{{Lang::get('site.favicon')}}" type="image/x-icon"/>
 
     {!! Html::style('assets/css/bootstrap.css', ['media' => 'screen']) !!}
+
     {!! Html::style('assets/css/responsive.css', ['media' => 'screen']) !!}
     {!! Html::style('assets/css/style.css', ['media' => 'screen']) !!}
 

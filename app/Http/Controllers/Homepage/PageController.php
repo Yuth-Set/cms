@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Homepage;
 
 use App\Http\Controllers\Controller;
+use App\Page;
 
 class PageController extends Controller {
     public function index() {
@@ -11,9 +12,8 @@ class PageController extends Controller {
     }
 
     public function show($slug) {
-        if (!view()->exists("home.$slug")) {
-            abort(404);
-        }
-        return view("home.$slug");
+        $data['page'] = Page::getPage($slug);
+        $data['posts'] = Page::getPosts($slug);
+        return view("home.page", $data);
     }
 }
