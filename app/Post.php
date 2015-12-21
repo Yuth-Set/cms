@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model {
@@ -9,7 +8,9 @@ class Post extends Model {
         'slug',
         'title',
         'content',
-        'status'
+        'status',
+        'user_id',
+        'page_id'
 
     ];
 
@@ -23,5 +24,9 @@ class Post extends Model {
 
     public function page() {
         return $this->belongsTo('App\Page');
+    }
+
+    public function user() {
+        return $this->belongsTo('App\User');
     }
 }

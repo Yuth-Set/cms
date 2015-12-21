@@ -32,6 +32,7 @@ class PostController extends Controller {
     }
 
     public function edit(Post $post) {
+        $data['pages'] = Page::where('status', 1)->lists('title', 'id');
         $data['post'] = $post;
         return view('post.update', $data);
     }
