@@ -14,12 +14,21 @@ return [
     'email_address_here'  => 'Enter e-mail here',
     'privacy_policy'      => 'Privacy Policy',
     'privacy_policy_link' => 'page/privacy_policy',
-    'copyright'           => 'Stylish &copy; 2012',
+    'copyright'           => 'Copyright 2012 Piccolo Theme. All rights reserved.',
     'menu_title'          => 'MENU',
     'socials'             => [
         ['name' => '', 'link' => '#', 'src' => 'assets/img/icon-1.png', 'alt' => 'assets/img/icon-1.png'],
         ['name' => '', 'link' => '#', 'src' => 'assets/img/icon-2.png', 'alt' => 'assets/img/icon-2.png'],
         ['name' => '', 'link' => '#', 'src' => 'assets/img/icon-3.png', 'alt' => 'assets/img/icon-3.png'],
         ['name' => '', 'link' => '#', 'src' => 'assets/img/icon-4.png', 'alt' => 'assets/img/icon-4.png']
-    ]
+    ],
+
+    'contact' => 'Contact',
+    'address' => '<strong>Design Team</strong><br/>123 Main St, Suite 500<br/>New York, NY 12345<br />',
+
+    'about'          => 'About Us',
+    'gallery'        => 'Flickr Photos',
+    'lastest_posts'  => 'Latest Posts',
+    'lastest_tweets' => 'Latest Tweets'
+
 ];

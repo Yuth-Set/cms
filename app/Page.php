@@ -1,10 +1,10 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Page extends Model {
+    const POSTS_PER_PAGE = 4;
     protected $fillable = [
         'slug',
         'title',
@@ -14,11 +14,105 @@ class Page extends Model {
         'layout'
     ];
 
+    // related items
+    public function posts() {
+        return $this->hasMany('App\Post');
+    }
+
+    // helper functions
     public static function listOn() {
-        return Page::where('status', 1)->orderBy('order', 'asc')->lists('title', 'slug');
+        return self::where('status', 1)->orderBy('order', 'asc')->lists('title', 'slug');
     }
 
     public static function listOff() {
-        return Page::where('status', 0)->orderBy('order', 'asc')->lists('title', 'slug');
+        return self::where('status', 0)->orderBy('order', 'asc')->lists('title', 'slug');
+    }
+
+    public static function getPage($slug) {
+        return self::where('slug', "page/$slug")->first();
+    }
+
+    public static function getPosts($slug = '', $status = 1) {
+        if (!empty($slug)) {
+            return self::where(['slug' => "page/$slug", 'status' => $status])->first()->posts()->paginate(self::POSTS_PER_PAGE);
+        }
+        return self::where('status', $status)->first()->posts()->paginate(self::POSTS_PER_PAGE);
+    }
+
+    public static function gallery() {
+        return [
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ]
+        ];
     }
 }

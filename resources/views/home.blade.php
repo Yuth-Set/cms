@@ -1,171 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>About</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{Lang::get('site.description')}}">
-    <meta name="keywords" content="{{Lang::get('site.keywords')}}">
-    <meta name="author" content="{{Lang::get('site.author')}}">
-    <link rel="icon" href="{{Lang::get('site.favicon')}}" type="image/x-icon"/>
-    <link rel="shortcut icon" href="{{Lang::get('site.favicon')}}" type="image/x-icon"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{!! Lang::get('site.title') !!}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {!! Html::style('assets/css/bootstrap.css', ['media' => 'screen']) !!}
-    {!! Html::style('assets/css/responsive.css', ['media' => 'screen']) !!}
-    {!! Html::style('assets/css/style.css', ['media' => 'screen']) !!}
+<!-- CSS
+================================================== -->
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{url('assets/css/bootstrap.css')}}">
+<link rel="stylesheet" href="{{url('assets/css/bootstrap-responsive.css')}}">
+<link rel="stylesheet" href="{{url('assets/css/prettyPhoto.css')}}" />
+<link rel="stylesheet" href="{{url('assets/css/flexslider.css')}}" />
+<link rel="stylesheet" href="{{url('assets/css/custom-styles.css')}}">
 
-    @if ($slide)
-        {!! Html::style('assets/css/camera.css', ['media' => 'screen']) !!}
-    @endif
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js')}}"></script>
+    <link rel="stylesheet" href="{{url('assets/css/style-ie.css')}}"/>
+<![endif]-->
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'/>
+<!-- Favicons
+================================================== -->
+<link rel="shortcut icon" href="{{url('assets/img/favicon.ico')}}">
+<link rel="apple-touch-icon" href="{{url('assets/img/apple-touch-icon.png')}}">
+<link rel="apple-touch-icon" sizes="72x72" href="{{url('assets/img/apple-touch-icon-72x72.png')}}">
+<link rel="apple-touch-icon" sizes="114x114" href="{{url('assets/img/apple-touch-icon-114x114.png')}}">
 
-    {!! Html::script('assets/js/jquery.js') !!}
-    {!! Html::script('assets/js/jquery.easing.1.3.js') !!}
-    {!! Html::script('assets/js/jquery.ui.totop.js') !!}
+<!-- JS
+================================================== -->
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="{{url('assets/js/bootstrap.js')}}"></script>
+<script src="{{url('assets/js/jquery.prettyPhoto.js')}}"></script>
+<script src="{{url('assets/js/jquery.flexslider.js')}}"></script>
+<script src="{{url('assets/js/jquery.custom.js')}}"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    $("#btn-blog-next").click(function () {
+        $('#blogCarousel').carousel('next')
+    });
+    $("#btn-blog-prev").click(function () {
+        $('#blogCarousel').carousel('prev')
+    });
 
-    @if ($slide)
-        {!! Html::script('assets/js/camera.js') !!}
-        <script>
-        $(document).ready(function() {
-            jQuery('.camera_wrap').camera();
-        });
-        </script>
-    @endif
+    $("#btn-client-next").click(function () {
+        $('#clientCarousel').carousel('next')
+    });
+    $("#btn-client-prev").click(function () {
+        $('#clientCarousel').carousel('prev')
+    });
+});
 
-    <!--[if lt IE 8]>
-        <div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/assets/img/upgrade.jpg"border="0"alt=""/></a></div>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    {!! Html::style('assets/css/docs.css', ['media' => 'screen']) !!}
-    {!! Html::style('assets/css/ie.css', ['media' => 'screen']) !!}
-  <![endif]-->
+$(window).load(function(){
+    $('.flexslider').flexslider({
+        animation: "slide",
+        slideshow: true,
+        start: function(slider){
+            $('body').removeClass('loading');
+        }
+    });
+});
+</script>
+
 </head>
 
-<body>
-<!--==============================header=================================-->
-<header>
+<body class="home">
+    <!-- Color Bars (above header)-->
+    <div class="color-bar-1"></div>
+    <div class="color-bar-2 color-bg"></div>
+
     <div class="container">
-        <div class="row">
-            <div class="span12">
-                <div class="header-block clearfix">
-                    <div class="clearfix header-block-pad">
-                        <h1 class="brand">
-                            <a href="{{ url() }}">
-                                <img src="{{url(Lang::get('site.logo'))}}" alt="{{Lang::get('site.logo')}}">
-                            </a>
-                            <span>{{Lang::get('site.title')}}</span>
-                        </h1>
-                        <form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form" >
-                            <input type="text" name="s" onBlur="if(this.value=='') this.value=''" onFocus="if(this.value =='' ) this.value=''"  >
-                            <a href="#" onClick="document.getElementById('search-form').submit()"></a>
-                        </form>
-                        <span class="contacts">
-                            <b>Call Us Toll Free: </b>
-                            <span>{{Lang::get('site.phone')}}</span>
-                            <br><b>E-mail: </b>
-                            <a href="{{Lang::get('site.email')}}">
-                                {{Lang::get('site.email')}}
-                            </a>
-                        </span>
-                    </div>
-                    <div class="navbar navbar_ clearfix">
-                        <div class="navbar-inner navbar-inner_">
-                            <div class="container">
-                                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse_">
-                                    {{Lang::get('site.menu_title')}}
-                                </a>
-                                <div class="nav-collapse nav-collapse_ collapse">
-                                    <ul class="nav sf-menu">
-                                        @if (!empty($menus))
-                                            @foreach ($menus as $k => $v)
-                                                @if ($k == '/')
-                                                    <li class="{{Request::is('/') ? 'li-first active' : 'li-first'}}">
-                                                        <a href="{{url($k)}}">
-                                                            <em class="hidden-phone"></em>
-                                                            <span class="visible-phone">Home</span>
-                                                        </a>
-                                                    </li>
-                                                @else
-                                                    <li class="{{Request::is($k) ? 'active' : ''}}">
-                                                        <a href="{{url($k)}}">{{$v}}</a>
-                                                    </li>
-                                                @endif
-                                            @endforeach
-                                        @endif
-                                    </ul>
-                                </div>
-                                @if (!empty(Lang::get('site.socials')))
-                                    <ul class="social-icons">
-                                        @foreach (Lang::get('site.socials') as $item)
-                                            <li>
-                                                <a href="{{url($item['link'])}}">
-                                                    <img src="{{url($item['src'])}}" alt="{{$item['alt']}}">
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            </div>
-                        </div>
-                     </div>
-                </div>
-            </div>
-       </div>
-    </div>
-    @if ($slide)
-    <div class="slider">
-        <div class="camera_wrap">
-            <div data-src="{{url('assets/img/slide1.jpg')}}"></div>
-            <div data-src="{{url('assets/img/slide2.jpg')}}"></div>
-            <div data-src="{{url('assets/img/slide3.jpg')}}"></div>
+
+      <div class="row header"><!-- Begin Header -->
+
+        <!-- Logo -->
+        <div class="span5 logo">
+            <a href="index.htm"><img src="{{url('assets/img/piccolo-logo.png')}}" alt="" /></a>
+            <h5>Big Things... Small Packages</h5>
         </div>
-    </div>
-    @endif
-</header>
 
-<section id="content">
-    @yield('content')
-</section>
-
-<footer>
-   <div class="container">
-    <div class="row">
-      <div class="span4 float2">
-        <form id="newsletter" method="post" >
-            <label>{{Lang::get('site.newsletter')}}</label>
-            <div class="clearfix">
-                <input type="text" onFocus="if(this.value =='{{Lang::get('site.email_address_here')}}') this.value=''" onBlur="if(this.value=='') this.value='{{Lang::get('site.email_address_here')}}'" value="{{Lang::get('site.email_address_here')}}" >
-                <a href="#" onClick="document.getElementById('newsletter').submit()" class="btn btn_">
-                    {{Lang::get('site.subscribe')}}
-                </a>
-            </div>
-        </form>
-    </div>
-    <div class="span8 float">
-        @if (!empty($menus))
-            <ul class="footer-menu">
+        <!-- Main Navigation -->
+        <div class="span7 navigation">
+            <div class="navbar hidden-phone">
+            <?php $menus = App\Page::listOn();?>
+            <ul class="nav">
+            @if (!empty($menus))
                 @foreach ($menus as $k => $v)
-                    <li>
+                    <li class="{{Request::is($k) ? 'active' : ''}}">
                         <a href="{{url($k)}}">{{$v}}</a>
                     </li>
                 @endforeach
+            @endif
+            {{-- <li class="dropdown active">
+                <a href="{{url()}}">Home</b></a>
+            </li> --}}
+           {{-- <li><a href="features.htm">Features</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="page-full-width.htm">Pages <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="page-full-width.htm">Full Width</a></li>
+                    <li><a href="page-right-sidebar.htm">Right Sidebar</a></li>
+                    <li><a href="page-left-sidebar.htm">Left Sidebar</a></li>
+                    <li><a href="page-double-sidebar.htm">Double Sidebar</a></li>
+                </ul>
+            </li>
+             <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="gallery-4col.htm">Gallery <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="gallery-3col.htm">Gallery 3 Column</a></li>
+                    <li><a href="gallery-4col.htm">Gallery 4 Column</a></li>
+                    <li><a href="gallery-6col.htm">Gallery 6 Column</a></li>
+                    <li><a href="gallery-4col-circle.htm">Gallery 4 Round</a></li>
+                    <li><a href="gallery-single.htm">Gallery Single</a></li>
+                </ul>
+             </li>
+             <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="blog-style1.htm">Blog <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="blog-style1.htm">Blog Style 1</a></li>
+                    <li><a href="blog-style2.htm">Blog Style 2</a></li>
+                    <li><a href="blog-style3.htm">Blog Style 3</a></li>
+                    <li><a href="blog-style4.htm">Blog Style 4</a></li>
+                    <li><a href="blog-single.htm">Blog Single</a></li>
+                </ul>
+             </li>
+             <li><a href="page-contact.htm">Contact</a></li> --}}
             </ul>
-        @endif
-            {{Lang::get('site.copyright')}} |
-            <a href="{{url(Lang::get('site.privacy_policy_link'))}}">
-                {{Lang::get('site.privacy_policy')}}
-            </a>
-      </div>
-    </div>
-   </div>
-</footer>
 
-{!! Html::script('assets/js/bootstrap.js') !!}
+            </div>
+
+            <!-- Mobile Nav -->
+            <form action="#" id="mobile-nav" class="visible-phone">
+                <div class="mobile-nav-select">
+                    <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+                        @if (!empty($menus))
+                            @foreach ($menus as $k => $v)
+                                <option value="{{url($k)}}"
+                                {{Request::is($k) ? 'selected' : ''}}
+                                >{{$v}}</option>
+                            @endforeach
+                        @endif
+                    </select>
+                </div>
+            </form>
+
+        </div>
+
+    </div><!-- End Header -->
+
+    @yield('content')
+
+    </div> <!-- End Container -->
+
+    <!-- Footer Area
+        ================================================== -->
+
+    <div class="footer-container"><!-- Begin Footer -->
+        <div class="container">
+            <div class="row footer-row">
+                <div class="span3 footer-col">
+                    <h5>{!! Lang::get('site.about') !!}</h5>
+                   <img src="{{url('assets/img/piccolo-footer-logo.png')}}" alt="Piccolo" /><br /><br />
+                    <address>
+                        {!! Lang::get('site.address') !!}
+                    </address>
+                    <ul class="social-icons">
+                        <li><a href="#" class="social-icon facebook"></a></li>
+                        <li><a href="#" class="social-icon twitter"></a></li>
+                        <li><a href="#" class="social-icon dribble"></a></li>
+                        <li><a href="#" class="social-icon rss"></a></li>
+                        <li><a href="#" class="social-icon forrst"></a></li>
+                    </ul>
+                </div>
+                <div class="span3 footer-col">
+                    <h5>{!! Lang::get('site.lastest_tweets') !!}</h5>
+                    <ul>
+                        <li>
+                            <a href="#">@room122</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </li>
+                        <li>
+                            <a href="#">@room122</a> In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum. Morbi blandit ultricies ultrices.
+                        </li>
+                        <li>
+                            <a href="#">@room122</a> Vivamus nec lectus sed orci molestie molestie. Etiam mattis neque eu orci rutrum aliquam.
+                        </li>
+                    </ul>
+                </div>
+                <div class="span3 footer-col">
+                    <h5>{!! Lang::get('site.lastest_posts') !!}</h5>
+                     <ul class="post-list">
+                        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="#">Consectetur adipiscing elit est lacus gravida</a></li>
+                        <li><a href="#">Lectus sed orci molestie molestie etiam</a></li>
+                        <li><a href="#">Mattis consectetur adipiscing elit est lacus</a></li>
+                        <li><a href="#">Cras rutrum, massa non blandit convallis est</a></li>
+                    </ul>
+                </div>
+                <div class="span3 footer-col">
+                    <h5>{!! Lang::get('site.gallery') !!}</h5>
+                    <ul class="img-feed">
+                        @foreach (App\Page::gallery() as $file)
+                            <li>
+                                <a href="{{$file['href']}}">
+                                    <img src="{{url($file['src'])}}" alt="{{$file['alt']}}">
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row"><!-- Begin Sub Footer -->
+                <div class="span12 footer-col footer-sub">
+                    <div class="row no-margin">
+                        <div class="span6">
+                            <span class="left">
+                                {!! Lang::get('site.copyright') !!}
+                            </span>
+                        </div>
+                        <div class="span6">
+                            {{-- <span class="right">
+                                <a href="#">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                                <a href="#">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                                <a href="#">Gallery</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                                <a href="#">Blog</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                                <a href="#">Contact</a>
+                            </span> --}}
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Sub Footer -->
+
+        </div>
+    </div><!-- End Footer -->
+
+    <!-- Scroll to Top -->
+    <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
 
 </body>
 </html>

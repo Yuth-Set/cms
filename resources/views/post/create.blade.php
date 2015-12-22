@@ -29,13 +29,4 @@
 
 @endsection
 
-@push('scripts')
-{!! Html::script('ckeditor/ckeditor.js') !!}
-<script type="text/javascript">
-    $(function(){
-        $('#txtContent').ckeditor();
-    });
-</script>
-@endpush
-</div>
 

@@ -14,11 +14,11 @@ class CreatePostsTable extends Migration {
             $table->integer('user_id')->unsigned();
             $table->integer('page_id')->unsigned();
             $table->timestamps();
-            $table->timestamp('deleted_at');
-            $table->timestamp('published_at');
+            $table->timestamp('deleted_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('published_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
+            /*$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');*/
+            /*$table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');*/
         });
     }
 

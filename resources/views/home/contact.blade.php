@@ -2,61 +2,61 @@
 
 @section('content')
 
-<div class="sub-content">
-    <div class="container">
-        <div class="row">
-            <div class="span4">
-                <h4>Contact info</h4>
-                <div class="map">
-                    <iframe src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Brooklyn,+New+York,+NY,+United+States&amp;aq=0&amp;sll=37.0625,-95.677068&amp;sspn=61.282355,146.513672&amp;ie=UTF8&amp;hq=&amp;hnear=Brooklyn,+Kings,+New+York&amp;ll=40.649974,-73.950005&amp;spn=0.01628,0.025663&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
-                </div>
-                <address>
-                    <strong class="clr">
-                        The Company Name Inc.
-                        <br>8901 Marmora Road,
-                        <br>Glasgow, D04 89GR.
-                    </strong>
-                    <br>
-                    <span>Freephone:</span>+1 800 559 6580
-                    <br>
-                    <span>Telephone:</span>+1 800 603 6035
-                    <br>
-                    <span>FAX:</span>+1 800 889 9898
-                    <br> E-mail: <a href="#"><u>mail@demolink.org</u></a>
-                </address>
+<div class="row">
+
+        <div class="span8 contact">
+
+            <h2>Contact Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna.</p>
+
+            <div class="alert alert-success">
+                Well done! You successfully read this important alert message.
             </div>
-            <div class="span6">
-                <h4>Get in touch</h4>
-                <div class="contact-form">
-                    <form id="contact-form">
-                        <div class="success">Contact form submitted!<strong><br>We will be in touch soon.</strong> </div>
-                        <fieldset>
-                            <label class="name">
-                                <input type="text" value="Name:">
-                                <span class="error">*This is not a valid name.</span> <span class="empty">*This field is required.</span>
-                            </label>
-                            <label class="email">
-                                <input type="email" value="E-mail:">
-                                <span class="error">*This is not a valid email address.</span> <span class="empty">*This field is required.</span>
-                            </label>
-                            <label class="phone">
-                                <input type="text" value="Phone:">
-                                <span class="error">*This is not a valid phone number.</span> <span class="empty">*This field is required.</span>
-                            </label>
-                            <label class="message">
-                                <textarea>Message:</textarea>
-                                <span class="error">*The message is too short.</span> <span class="empty">*This field is required.</span>
-                            </label>
-                        </fieldset>
-                        <div class="pull-right">
-                            <a href="#" class="btn btn_ btn-small_" data-type="reset">clear</a>
-                            <a href="#" class="btn btn_ btn-small_" data-type="submit">submit</a>
-                        </div>
-                    </form>
+
+            <form action="#" id="contact-form">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-user"></i></span>
+                    <input class="span4" id="prependedInput" size="16" type="text" placeholder="Name">
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-envelope"></i></span>
+                    <input class="span4" id="prependedInput" size="16" type="text" placeholder="Email Address">
+                </div>
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-globe"></i></span>
+                    <input class="span4" id="prependedInput" size="16" type="text" placeholder="Website URL">
+                </div>
+                <textarea class="span6"></textarea>
+                <div class="row">
+                    <div class="span2">
+                        <input type="submit" class="btn btn-inverse" value="Send Message">
+                    </div>
+                </div>
+            </form>
+
+        </div> <!--End page content column-->
+
+        <!-- Sidebar
+        ================================================== -->
+        <div class="span4 sidebar page-sidebar"><!-- Begin sidebar column -->
+            <h5 class="title-bg">Our Location</h5>
+            <address>
+            <strong>Piccolo</strong><br>
+            123 Main St, Suite 600<br>
+            San Francisco, CA 94107<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+            </address>
+
+            <address>
+            <strong>Jimmy Doe</strong><br>
+            <a href="mailto:#">first.last@gmail.com</a>
+            </address>
+
+            <h5 class="title-bg">Map Us</h5>
+            <img src="img/location-map.jpg" alt="map">
+
+        </div><!-- End sidebar column -->
+
+    </div><!-- End container row -->
 
 @endsection
