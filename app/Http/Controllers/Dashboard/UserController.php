@@ -52,4 +52,8 @@ class UserController extends Controller {
         $user->delete();
         return redirect('dash/user')->with('message', 'User was deleted success.');
     }
+
+    public function showuploadfile() {
+        return view('user.uploadfile');
+    }
 }
