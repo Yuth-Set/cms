@@ -2,17 +2,12 @@
 
 @section('content')
 
-<div class="sub-content">
-    <div class="container">
-        {{-- <div class="row">
-            <div class="span12">
-                <h4 class="bot-0">summer 2012 Fashion Guide</h4>
-            </div>
-        </div> --}}
-
-        @include("home.layout_4", ['posts' => $posts, 'page' => $page])
-
-    </div>
-</div>
+    @if (!empty($posts))
+        @include("partials.$layout")
+    @else
+        <div class="alert alert-danger">
+            <strong>Danger!</strong> There are no posts here.
+        </div>
+    @endif
 
 @endsection

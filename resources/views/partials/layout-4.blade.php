@@ -1,0 +1,62 @@
+<!-- Full width Content -->
+<div class="row">
+    <div class="span12">
+        <h2>Full Width Page</h2>
+        <p class="lead">When you need all the room you can get. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie.</p>
+        <!-- Carousel
+            ================================================== -->
+        <div class="row">
+            <div class="span6">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a>
+                        </li>
+                        <li>
+                            <a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a>
+                        </li>
+                        <li>
+                            <a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a>
+                        </li>
+                        <li>
+                            <a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a>
+                        </li>
+                        <li>
+                            <a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="span6">
+                <h5>Lorem ipsum dolor sit amet</h5>
+                <p>Vivamus augue nulla, vestibulum ac ultrices posuere, vehicula ac arcu. Quisque nisi lacus, bibendum quis commodo eget, lobortis eget elit. Cras venenatis mauris eu tortor consequat a convallis nulla molestie. Phasellus malesuada malesuada velit et fermentum. Proin ut leo nec mauris pulvinar volutpat. Sed ac neque nec leo condimentum rhoncus. Nunc dapibus odio et lacus elementum congue. Praesent nulla arcu, condimentum eu lobortis sit amet, pretium vitae metus. </p>
+                <blockquote>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Praesent nulla arcu, condimentum eu lobortis.</p>
+                    <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+                </blockquote>
+                <button class="btn btn-small btn-inverse" type="button">Find out more</button>
+            </div>
+        </div>
+        <h3 class="title-bg"> This is a sub head divider</h3>
+        <div class="row">
+            <div class="span4">
+                <img src="img/gallery/gallery-img-1-3col.jpg" alt="image">
+                <h5>3 Column Layout</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
+                <button class="btn btn-small btn-inverse" type="button">Read more</button>
+            </div>
+            <div class="span4">
+                <img src="img/gallery/gallery-img-1-3col.jpg" alt="image">
+                <h5>3 Column Layout</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
+                <button class="btn btn-small btn-inverse" type="button">Read more</button>
+            </div>
+            <div class="span4">
+                <img src="img/gallery/gallery-img-1-3col.jpg" alt="image">
+                <h5>3 Column Layout</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
+                <button class="btn btn-small btn-inverse" type="button">Read more</button>
+            </div>
+        </div>
+    </div>
+</div>

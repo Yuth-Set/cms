@@ -1,10 +1,10 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Page extends Model {
+    const POSTS_PER_PAGE = 4;
     protected $fillable = [
         'slug',
         'title',
@@ -32,8 +32,87 @@ class Page extends Model {
         return self::where('slug', "page/$slug")->first();
     }
 
-    public static function getPosts($slug, $status = 1) {
-        return self::where(['slug' => "page/$slug", 'status' => $status])->first()->posts()->paginate(4);
+    public static function getPosts($slug = '', $status = 1) {
+        if (!empty($slug)) {
+            return self::where(['slug' => "page/$slug", 'status' => $status])->first()->posts()->paginate(self::POSTS_PER_PAGE);
+        }
+        return self::where('status', $status)->first()->posts()->paginate(self::POSTS_PER_PAGE);
     }
 
+    public static function gallery() {
+        return [
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ],
+            [
+                'name' => '',
+                'href' => 'assets/img/gallery/flickr-img-1.jpg',
+                'src'  => 'assets/img/gallery/flickr-img-1.jpg',
+                'alt'  => 'Image Feed'
+            ]
+        ];
+    }
 }

@@ -4,6 +4,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model {
+    const POSTS_PER_PAGE = 4;
     protected $fillable = [
         'slug',
         'title',
@@ -11,7 +12,6 @@ class Post extends Model {
         'status',
         'user_id',
         'page_id'
-
     ];
 
     public static function postOn($slug) {
@@ -28,5 +28,10 @@ class Post extends Model {
 
     public function user() {
         return $this->belongsTo('App\User');
+    }
+
+    /* helper functions */
+    public static function getPosts() {
+        return self::paginate(self::POSTS_PER_PAGE);
     }
 }
