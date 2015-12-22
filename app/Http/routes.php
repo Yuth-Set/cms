@@ -10,7 +10,6 @@ Route::group(['prefix' => 'dash', 'namespace' => 'Dashboard', 'middleware' => 'a
     Route::get('/', ['as' => 'dash.index', 'middleware' => 'auth', 'uses' => function () {
         return view('dashboard');
     }]);
-
     Route::resource('post', 'PostController');
     Route::delete('post/{post?}', 'PostController@destroy');
     Route::delete('page/{page?}', 'PageController@destroy');
@@ -18,7 +17,16 @@ Route::group(['prefix' => 'dash', 'namespace' => 'Dashboard', 'middleware' => 'a
     Route::resource('user', 'UserController');
     Route::resource('comment', 'CommentController');
 });
+Route::group(['namespace' => 'Dashboard'], function () {
+    Route::get('upload/photo', function () {
+        return view('upload.photo');
+    });
+    Route::post('upload/photo', [
+        'as'   => 'upload.photo',
+        'uses' => 'UploadController@photo'
+    ]);
 
+});
 Route::group(['namespace' => 'Auth', 'prefix' => 'auth'], function () {
     Route::get('login', ['as' => 'auth.login', 'uses' => 'AuthController@getLogin']);
     Route::post('login', ['as' => 'auth.login', 'uses' => 'AuthController@postLogin']);
