@@ -52,7 +52,6 @@ class PostTableSeeder extends Seeder {
             ['Test post', 'test_post_3', 'This is the first testing posts', 1, '3', '2'],
             ['Test post', 'test_post_4', 'This is the first testing posts', 0, '1', '1'],
             ['Test post', 'test_post_5', 'This is the first testing posts', 1, '2', '3']
-
         ];
 
         foreach ($posts as $post) {
