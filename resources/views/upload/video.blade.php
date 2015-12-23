@@ -2,6 +2,7 @@
 
 
 @section('content')
+    <h1>Video</h1>
     <div class="container-fluid">
         <div class="row">
 
@@ -9,12 +10,12 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Login</div>
                     <div class="panel-body">
-                        {!! Form::open(['route' => 'upload.photo', 'class' => 'form-horizontal', 'novalidate' => 'novalidate', 'files' => true]) !!}
+                        {!! Form::open(['route' => 'upload.video', 'class' => 'form-horizontal', 'novalidate' => 'novalidate', 'files' => true]) !!}
 
                         <div class="form-group">
-                            {!! Form::label('Photo','Upload Photo') !!}
-                            {!! Form::file('image', null) !!}
-                            {!! $errors->first('image', '<span class="text-danger">:message</span>') !!}
+                            {!! Form::label('video','Upload Video') !!}
+                            {!! Form::file('video', null) !!}
+                            {!! $errors->first('video', '<span class="text-danger">:message</span>') !!}
                         </div>
 
                         <div class="form-group">
