@@ -1,5 +1,7 @@
 <?php
 
+Route::get('tags/{tags}', 'TagsController@show');
+
 Route::group(['namespace' => 'Homepage'], function () {
     Route::get('/', 'PageController@index');
     Route::get('page/{slug}', 'PageController@show');

@@ -25,6 +25,14 @@
     </div>
 </div>
 <div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            {!! Form::label('tag_list','Tags:')!!}
+            {!! Form::select('tag_list[]',$tags,null ,['id'=>'tag_list','class'=>'form-control','multiple']) !!}
+        </div>
+    </div>
+</div>
+<div class="row">
     <div class="col-md-6">
         <div class="form-group">
             <label for="status">Status</label>

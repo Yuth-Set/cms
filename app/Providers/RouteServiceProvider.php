@@ -14,6 +14,10 @@ class RouteServiceProvider extends ServiceProvider {
         $router->model('user', 'App\User');
         $router->model('post', 'App\Post');
         $router->model('comment', 'App\Comment');
+
+        $router->bind('tags', function ($name) {
+            return \App\Tag::where('name', $name)->firstOrFail();
+        });
     }
 
     public function map(Router $router) {
