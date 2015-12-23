@@ -3,9 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreatePostTagsTable extends Migration {
+class CreatePostTagTable extends Migration {
     public function up() {
-        Schema::create('post_tags', function (Blueprint $table) {
+        Schema::create('post_tag', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('post_id')->unsigned()->index();
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
@@ -21,7 +21,7 @@ class CreatePostTagsTable extends Migration {
 
     public function down() {
         DB::statement('SET foreign_key_checks = 0');
-        Schema::drop('post_tags');
+        Schema::drop('post_tag');
         DB::statement('SET foreign_key_checks = 1');
     }
 }

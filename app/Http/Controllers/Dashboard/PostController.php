@@ -24,6 +24,7 @@ class PostController extends Controller {
     }
 
     public function store(PostRequest $request) {
+        // dd($request->all());
         $post = Post::create($request->all());
         $post->tags()->attach($request->input('tag_list'));
         return redirect('dash/post', $post)->with('message', 'Post was create success.');
