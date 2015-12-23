@@ -27,7 +27,7 @@ class PostController extends Controller {
         // dd($request->all());
         $post = Post::create($request->all());
         $post->tags()->attach($request->input('tag_list'));
-        return redirect('dash/post', $post)->with('message', 'Post was create success.');
+        return redirect('dash/post')->with('message', 'Post was create success.');
     }
 
     public function show(Post $post) {
