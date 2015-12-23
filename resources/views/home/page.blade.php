@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @if (!empty($posts))
+    @if (!empty($section1->posts))
         @include("partials.$page->layout")
     @else
         <div class="alert alert-danger">

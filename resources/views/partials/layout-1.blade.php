@@ -1,14 +1,15 @@
 <!-- Right Sidebar -->
 <div class="row">
     <div class="span8">
-        @if (!empty($section))
-            <h2>{{$section->title}}</h2>
-            <p class="lead">{{$section->content}}</p>
-            <h5 class="title-bg">{{$section->subtitle}}</h5>
+        @if (!empty($section1))
+            <h2>{{$section1->title}}</h2>
+            <p class="lead">{{$section1->content}}</p>
+            <h5 class="title-bg">{{$section1->subtitle}}</h5>
         @endif
 
+        @if (!empty($section1->posts))
         <div class="row">
-            @foreach ($posts as $k => $post)
+            @foreach ($section1->posts as $k => $post)
                 @if ($k % 4 == 0)
                     </div><div class="row">
                 @endif
@@ -22,9 +23,13 @@
         </div>
         <div class="row">
             <div class="span12">
-                {!! $posts->render() !!}
+                {!! $section1->posts->render() !!}
             </div>
         </div>
+        @endif
+
+
+
 
         <!-- <h3 class="title-bg"> This is a sub head divider</h3>
         <div class="clearfix">

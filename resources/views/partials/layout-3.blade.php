@@ -5,20 +5,19 @@
     </div>
     <!--Begin page content column-->
     <div class="span6">
-        <h2 class="title-bg">Double Sidebar Example</h2>
-        <img src="img/gallery/gallery-img-1-full.jpg" alt="Image">
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie.</p>
+        <h2 class="title-bg">{{$section1->title}}</h2>
+        <p class="lead">{{$section1->content}}</p>
         <div class="row">
-            <div class="span3">
-                <h5>2 Column Layout</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
-                <button class="btn btn-mini btn-inverse" type="button">Read more</button>
-            </div>
-            <div class="span3">
-                <h5>2 Column Layout</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
-                <button class="btn btn-mini btn-inverse" type="button">Read more</button>
-            </div>
+            @foreach ($section1->posts as $k => $post)
+                @if ($k % 2 == 0)
+                    </div><div class="row">
+                @endif
+                <div class="span3">
+                    <h5>{{$post->title}}</h5>
+                    <p>{{$post->content}}</p>
+                    <button class="btn btn-mini btn-inverse" type="button">Read more</button>
+                </div>
+            @endforeach
         </div>
     </div>
     <!--End page content column-->
