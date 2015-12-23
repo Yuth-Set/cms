@@ -16,7 +16,7 @@
                             <img src="{{url('assets/img/gallery/gallery-img-1-3col.jpg')}}" alt="Gallery">
                         </a>
                         <span class="project-details">
-                            <a href="{{url($post->slug)}}">{{$post->title}}</a>
+                            <a href="{{url('post/' . $post->slug)}}">{{$post->title}}</a>
                             {{$post->content}}
                         </span>
                     </li>

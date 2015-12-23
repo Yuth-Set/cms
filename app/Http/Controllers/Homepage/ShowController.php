@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Homepage;
 use App\Http\Controllers\Controller;
 use App\Page;
 use App\Post;
+use App\Tag;
 
-class PageController extends Controller {
+class ShowController extends Controller {
     public function index() {
         $data['posts'] = Post::getAll();
         $data['slides'] = [
@@ -19,8 +20,9 @@ class PageController extends Controller {
         return view('home.index', $data);
     }
 
-    public function show($slug) {
+    public function page($slug) {
         $data['page'] = Page::getBy($slug);
+        $data['tags'] = Tag::all();
 
         $data['section1'] = (object) [
             'title'    => 'Main Section',
@@ -49,4 +51,26 @@ class PageController extends Controller {
         return view("home.page", $data);
     }
 
+    public function post($slug) {
+        $post = Post::getOn($slug);
+        if (empty($post)) {
+            abort(404);
+        }
+        $data['post'] = $post;
+        return view('home.post', $data);
+    }
+
+    public function tag($slug) {
+        $tag = Tag::getBy($slug);
+        if (empty($tag)) {
+            abort(404);
+        }
+        $data['tag'] = $tag;
+        $data['tags'] = Tag::all();
+        $data['sidebar'] = (object) [
+            'latest_posts'  => Post::getLatest(),
+            'popular_posts' => Post::getPopular()
+        ];
+        return view('home.post', $data);
+    }
 }

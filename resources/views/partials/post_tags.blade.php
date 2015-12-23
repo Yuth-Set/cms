@@ -1,7 +1,6 @@
-<h5 class="title-bg">Navigation</h5>
+<h5 class="title-bg">List tags</h5>
 <ul class="post-category-list">
-    <li><a href="#"><i class="icon-plus-sign"></i>About Us</a></li>
-    <li><a href="#"><i class="icon-plus-sign"></i>Services</a></li>
-    <li><a href="#"><i class="icon-plus-sign"></i>Mission</a></li>
-    <li><a href="#"><i class="icon-plus-sign"></i>Clients</a></li>
+    @foreach ($tags as $tag)
+        <li><a href="{{url('tag/' . $tag->slug)}}"><i class="icon-plus-sign"></i>{{$tag->name}}</a></li>
+    @endforeach
 </ul>

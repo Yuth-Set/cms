@@ -3,9 +3,10 @@
 Route::get('tags/{tags}', 'TagsController@show');
 
 Route::group(['namespace' => 'Homepage'], function () {
-    Route::get('/', 'PageController@index');
-    Route::get('page/{slug}', 'PageController@show');
-    Route::get('post/{slug}', 'PostController@show');
+    Route::get('/', 'ShowController@index');
+    Route::get('page/{slug}', 'ShowController@page');
+    Route::get('post/{slug}', 'ShowController@post');
+    Route::get('tag/{slug}', 'ShowController@tag');
 });
 
 Route::group(['prefix' => 'dash', 'namespace' => 'Dashboard', 'middleware' => 'auth'], function () {
