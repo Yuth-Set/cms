@@ -4,7 +4,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Page extends Model {
-    const POSTS_PER_PAGE = 4;
+    const POSTS_PER_PAGE = 12;
     protected $fillable = [
         'slug',
         'title',
@@ -28,11 +28,11 @@ class Page extends Model {
         return self::where('status', 0)->orderBy('order', 'asc')->lists('title', 'slug');
     }
 
-    public static function getPage($slug) {
+    public static function getBy($slug) {
         return self::where('slug', "page/$slug")->first();
     }
 
-    public static function getPosts($slug = '', $status = 1) {
+    public static function getPostBy($slug = '', $status = 1) {
         if (!empty($slug)) {
             return self::where(['slug' => "page/$slug", 'status' => $status])->first()->posts()->paginate(self::POSTS_PER_PAGE);
         }

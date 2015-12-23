@@ -1,14 +1,3 @@
-<h5 class="title-bg">User Login</h5>
-<div class="input-prepend">
-    <span class="add-on"><i class="icon-user"></i></span>
-    <input class="span2" id="prependedInput" size="16" type="text" placeholder="Username">
-</div>
-<div class="input-prepend">
-    <span class="add-on"><i class="icon-lock"></i></span>
-    <input class="span2" id="appendedPrependedInput" size="16" type="text" placeholder="Password">
-</div>
-<button class="btn btn-small btn-inverse" type="button">Login</button>
-<!--Tabbed Content-->
 <h5 class="title-bg">More Info</h5>
 <ul class="nav nav-tabs">
     <li class="active"><a href="#comments" data-toggle="tab">Comments</a></li>
@@ -27,15 +16,26 @@
     </div>
     <div class="tab-pane" id="tweets">
         <ul>
-            <li><a href="#"><i class="icon-share-alt"></i>@room122</a> Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna.</li>
             <li>
-                <a href="#"> <i class="icon-share-alt"></i>@room122</a> Nulla faucibus ligula eget ante varius ac euismod odio placerat.</li>
+                <a href="#">
+                    <i class="icon-share-alt"></i>@room122</a> Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna.
+            </li>
             <li>
-                <a href="#"> <i class="icon-share-alt"></i>@room122</a> Pellentesque iaculis lacinia leo. Donec suscipit, lectus et hendrerit posuere, dui nisi porta risus, eget adipiscing</li>
+                <a href="#">
+                    <i class="icon-share-alt"></i>@room122</a> Nulla faucibus ligula eget ante varius ac euismod odio placerat.
+            </li>
             <li>
-                <a href="#"> <i class="icon-share-alt"></i>@room122</a> Vivamus augue nulla, vestibulum ac ultrices posuere, vehicula ac arcu.</li>
+                <a href="#">
+                    <i class="icon-share-alt"></i>@room122</a> Pellentesque iaculis lacinia leo. Donec suscipit, lectus et hendrerit posuere, dui nisi porta risus, eget adipiscing
+            </li>
             <li>
-                <a href="#"> <i class="icon-share-alt"></i>@room122</a> Sed ac neque nec leo condimentum rhoncus. Nunc dapibus odio et lacus.</li>
+                <a href="#">
+                    <i class="icon-share-alt"></i>@room122</a> Vivamus augue nulla, vestibulum ac ultrices posuere, vehicula ac arcu.
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-share-alt"></i>@room122</a> Sed ac neque nec leo condimentum rhoncus. Nunc dapibus odio et lacus.
+            </li>
         </ul>
     </div>
     <div class="tab-pane" id="about">

@@ -1,11 +1,9 @@
 <!-- Left Sidebar -->
 <div class="row">
     <div class="span4 sidebar page-sidebar">
-        @include('partials.sidebar-2')
+        @include('partials.sidebar-1')
     </div>
-    <!-- End sidebar column -->
-    <!-- Page Content
-        ================================================== -->
+
     <div class="span8">
         @if (!empty($section))
             <h2>{{$section->title}}</h2>
@@ -14,6 +12,9 @@
         @endif
         <div class="row">
             @foreach ($posts as $post)
+                @if ($k % 4 == 0)
+                    </div><div class="row">
+                @endif
                 <div class="span2">
                     <img src="{{url('assets/img/gallery/gallery-img-1-6col.jpg')}}" alt="Image" class="thumbnail">
                     <h5>{{$post->title}}</h5>

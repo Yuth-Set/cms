@@ -11,6 +11,7 @@ class CreatePostsTable extends Migration {
             $table->string('slug');
             $table->text('content');
             $table->boolean('status');
+            $table->smallInteger('click_count')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->integer('page_id')->unsigned();
             $table->timestamps();

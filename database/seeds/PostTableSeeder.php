@@ -62,6 +62,7 @@ class PostTableSeeder extends Seeder {
                 'status'       => $post[3],
                 'user_id'      => $post[4],
                 'page_id'      => $post[5],
+                'click_count'  => rand(0, 100),
                 'created_at'   => Carbon::now(),
                 'updated_at'   => Carbon::now(),
                 'deleted_at'   => Carbon::now(),

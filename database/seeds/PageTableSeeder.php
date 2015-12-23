@@ -16,6 +16,8 @@ class PageTableSeeder extends Seeder {
             ['Hidden', 'page/hidden', 'contact.png', 'ravuthz', 8, 0]
         ];
 
+        $layouts = ['layout-1', 'layout-2', 'layout-3', 'layout-4', 'layout-5'];
+
         foreach ($pages as $page) {
             DB::table('pages')->insert([
                 'title'        => $page[0],
@@ -26,7 +28,7 @@ class PageTableSeeder extends Seeder {
                 'order'        => $page[4],
                 'status'       => $page[5],
                 'click_count'  => 0,
-                'layout'       => rand(1, 5),
+                'layout'       => $layouts[rand(0, 4)],
                 'created_at'   => Carbon::now(),
                 'updated_at'   => Carbon::now(),
                 'deleted_at'   => Carbon::now(),

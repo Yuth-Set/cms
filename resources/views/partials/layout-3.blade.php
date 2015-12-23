@@ -1,7 +1,7 @@
 <!-- Double Sidebar -->
 <div class="row">
     <div class="span3 sidebar page-left-sidebar">
-        @include('partials.sidebar-3')
+        @include('partials.sidebar-1')
     </div>
     <!--Begin page content column-->
     <div class="span6">
@@ -23,6 +23,6 @@
     </div>
     <!--End page content column-->
     <div class="span3 sidebar page-right-sidebar">
-        @include('partials.sidebar-4')
+        @include('partials.sidebar-2')
     </div>
 </div>

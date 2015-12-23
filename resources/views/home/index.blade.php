@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('home._slider')
+@include('partials.slider')
 
 @include('home._col_4')
 <!-- End Gallery Row -->

@@ -6,12 +6,16 @@
             <p class="lead">{{$section->content}}</p>
             <h5 class="title-bg">{{$section->subtitle}}</h5>
         @endif
+
         <div class="row">
-            @foreach ($posts as $post)
+            @foreach ($posts as $k => $post)
+                @if ($k % 4 == 0)
+                    </div><div class="row">
+                @endif
                 <div class="span2">
                     <img src="{{url('assets/img/gallery/gallery-img-1-6col.jpg')}}" alt="Image" class="thumbnail">
                     <h5>{{$post->title}}</h5>
-                    <p>{{$post->content}}</p>
+                    <p>{{Illuminate\Support\Str::limit($post->content, 36)}}</p>
                     <button class="btn btn-mini btn-inverse" type="button">Read more</button>
                 </div>
             @endforeach

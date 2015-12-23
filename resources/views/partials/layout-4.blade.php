@@ -1,29 +1,18 @@
 <!-- Full width Content -->
 <div class="row">
     <div class="span12">
-        <h2>Full Width Page</h2>
-        <p class="lead">When you need all the room you can get. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie.</p>
-        <!-- Carousel
-            ================================================== -->
+        <h2>{{$section->title}}</h2>
+        <p class="lead">{{$section->content}}</p>
+        <!-- Carousel -->
         <div class="row">
             <div class="span6">
                 <div class="flexslider">
                     <ul class="slides">
+                        @for($i=0; $i<5; $i++)
                         <li>
-                            <a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a>
+                            <a href="gallery-single.htm"><img src="{{url('assets/img/gallery/slider-img-1.jpg')}}" alt="slider" /></a>
                         </li>
-                        <li>
-                            <a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a>
-                        </li>
-                        <li>
-                            <a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a>
-                        </li>
-                        <li>
-                            <a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a>
-                        </li>
-                        <li>
-                            <a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a>
-                        </li>
+                        @endfor
                     </ul>
                 </div>
             </div>
@@ -40,19 +29,19 @@
         <h3 class="title-bg"> This is a sub head divider</h3>
         <div class="row">
             <div class="span4">
-                <img src="img/gallery/gallery-img-1-3col.jpg" alt="image">
+                <img src="{{url('assets/img/gallery/gallery-img-1-3col.jpg')}}" alt="image">
                 <h5>3 Column Layout</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
                 <button class="btn btn-small btn-inverse" type="button">Read more</button>
             </div>
             <div class="span4">
-                <img src="img/gallery/gallery-img-1-3col.jpg" alt="image">
+                <img src="{{url('assets/img/gallery/gallery-img-1-3col.jpg')}}" alt="image">
                 <h5>3 Column Layout</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
                 <button class="btn btn-small btn-inverse" type="button">Read more</button>
             </div>
             <div class="span4">
-                <img src="img/gallery/gallery-img-1-3col.jpg" alt="image">
+                <img src="{{url('assets/img/gallery/gallery-img-1-3col.jpg')}}" alt="image">
                 <h5>3 Column Layout</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
                 <button class="btn btn-small btn-inverse" type="button">Read more</button>

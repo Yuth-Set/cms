@@ -15,7 +15,7 @@ class CreatePagesTable extends Migration {
             $table->string('image')->nullable();
             $table->string('author');
             $table->smallInteger('click_count')->unsigned();
-            $table->tinyInteger('layout')->unsigned();
+            $table->string('layout', 70);
             $table->timestamps();
             $table->timestamp('deleted_at');
             $table->timestamp('published_at');
