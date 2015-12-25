@@ -312,7 +312,12 @@
     {!! Html::script('js/dash.js') !!}
     {{-- {!! Html::script('js/angular.min.js') !!} --}}
     {{-- {!! Html::script('js/dash-routes.js') !!} --}}
-    {{-- {!! Html::script('js/dash-controllers.js') !!} --}}
+    {{-- {!! Html::script('js/dash-controllers.js') !!} --}}    @push('scripts')
+    <script>
+        CKEDITOR.replace('ckeditor', {
+            customConfig: "{{url('assets/ckeditor/config.js')}}"
+        });
+    </script>
     @stack('scripts')
 </body>
 

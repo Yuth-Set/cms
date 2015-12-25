@@ -19,7 +19,7 @@
     <div class="col-md-12">
         <div class="form-group">
             <label for="description">Description</label>
-            {!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'txtDescription']) !!}
+            {!! Form::textarea('description', null, ['class' => 'form-control ckeditor']) !!}
         </div>
     </div>
 </div>
@@ -64,11 +64,3 @@
         </div>
     </div>
 </div>
-
-@push('scripts')
-<script>
-    CKEDITOR.replace('txtDescription', {
-        customConfig: "{{url('assets/ckeditor/config.js')}}"
-    });
-</script>
-@endpush

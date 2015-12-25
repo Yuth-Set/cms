@@ -11,16 +11,7 @@ CKEDITOR.editorConfig = function( config ) {
     config.uiColor = '#FFFFFF';
 
     config.toolbar = [
-        [
-            "Source",
-            "Save",
-            "NewPage",
-            "DocProps",
-            "Preview",
-            "Print",
-            "Templates",
-            "document"
-        ],
+        [ "Source", "Save", "NewPage", "DocProps", "Preview", "Print", "Templates", "document" ],
         [ /* "Cut", "Copy", "Paste", */ "PasteText", "PasteFromWord", /* "Undo", "Redo" */ ],
         [ /* "Find", "Replace", "SelectAll", */ "Scayt" ],
         //[ "Form", "Checkbox", "Radio", "TextField", "Textarea", "Select", "Button", "ImageButton", "HiddenField" ],

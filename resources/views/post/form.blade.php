@@ -19,7 +19,7 @@
     <div class="col-md-12">
         <div class="form-group">
             <label for="content">Content</label>
-            {!! Form::textarea('content', null, ['class' => 'form-control', 'id' => 'txtContent']) !!}
+            {!! Form::textarea('content', null, ['class' => 'form-control ckeditor', 'id' => 'txtContent']) !!}
             {!! $errors->first('content', '<span class="text-danger">:message</span>') !!}
         </div>
     </div>
@@ -56,4 +56,3 @@
         </div>
     </div>
 </div>
-
