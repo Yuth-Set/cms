@@ -64,3 +64,11 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+<script>
+    CKEDITOR.replace('txtDescription', {
+        customConfig: "{{url('assets/ckeditor/config.js')}}"
+    });
+</script>
+@endpush

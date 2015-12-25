@@ -305,6 +305,9 @@
     {!! Html::script('js/jquery.min.js') !!}
     {!! Html::script('js/bootstrap.min.js') !!}
     {!! Html::script('js/bootstrap-table.min.js') !!}
+
+    {!! HTML::script('assets/ckeditor/ckeditor.js') !!}
+
     {!! Html::script('js/app.js') !!}
     {!! Html::script('js/dash.js') !!}
     {{-- {!! Html::script('js/angular.min.js') !!} --}}
