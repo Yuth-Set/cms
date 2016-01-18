@@ -23,18 +23,13 @@
 
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="image">Type</label>
                                             {!! Form::select('type', ['admin' => 'admin', 'user' => 'user'], null, ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="image">Type</label>
-                                            {!! Form::select('gender', ['male' => 'male', 'female' => 'female'], null, ['class' => 'form-control']) !!}
-                                    </div>
-                                </div>
+
                             </div>
 
                             <div class="row">
