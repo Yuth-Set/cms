@@ -1,7 +1,5 @@
 <?php
 
-Route::get('tags/{tags}', 'TagsController@show');
-
 Route::group(['namespace' => 'Homepage'], function () {
     Route::get('/', 'ShowController@index');
     Route::get('page/{slug}', 'ShowController@page');
@@ -13,6 +11,7 @@ Route::group(['prefix' => 'dash', 'namespace' => 'Dashboard', 'middleware' => 'a
     Route::get('/', ['as' => 'dash.index', 'middleware' => 'auth', 'uses' => function () {
         return view('dashboard');
     }]);
+    Route::get('tags/{tags}', 'TagsController@show');
     Route::resource('post', 'PostController');
     Route::delete('post/{post?}', 'PostController@destroy');
     Route::delete('page/{page?}', 'PageController@destroy');

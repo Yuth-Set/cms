@@ -12,11 +12,20 @@
 					<div class="panel-body">
 						<form class="form-horizontal" role="form" method="POST" action="/auth/login">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
+                            @if($errors->any())
+                                <div class="alert alert-danger">
+                                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{$error}}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
 							<div class="form-group">
 								<label class="col-md-4 control-label">E-Mail Address </label>
 							 	<div class="col-md-6">
-							 		<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+							 		<input type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 							 	</div>
 							</div>
 							<!-- if you wanna login by name
@@ -29,7 +38,7 @@
 							<div class="form-group">
 								<label class="col-md-4 control-label">Password </label>
 								<div class="col-md-6">
-									<input type="password" class="form-control" name="password">
+									<input type="password" class="form-control" name="password" required>
 								</div>
 							</div>
 
